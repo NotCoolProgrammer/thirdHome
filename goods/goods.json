@@ -4,55 +4,127 @@
         "name": "SMART WATCHES",
         "desc": "EXPLODE NOW",
         "price": "$300",
-        "img": "../images/p-1.png"
+        "img": [
+            {
+                "imgToDisplay": "../images/imgToDisplay/p-1.png"
+            }, 
+            {
+                "singleImg": "../images/singleImg/1.png"
+            }
+        ],
+        "singleView": "11",
+        "fullDesc": "Очень крассные часы №1"
     },
     {
         "id": "2",
         "name": "SMART WATCHES",
         "desc": "EXPLODE NOW",
         "price": "$310",
-        "img": "../images/p-2.png"
+        "img": [
+            {
+                "imgToDisplay": "../images/imgToDisplay/p-2.png"
+            }, 
+            {
+                "singleImg": "../images/singleImg/1.png"
+            }
+        ],
+        "singleView": "22",
+        "fullDesc": "Очень крассные часы №2"
     },
     {
         "id": "3",
         "name": "SMART WATCHES",
         "desc": "EXPLODE NOW",
         "price": "$320",
-        "img": "../images/p-3.png"
+        "img": [
+            {
+                "imgToDisplay": "../images/imgToDisplay/p-3.png"
+            }, 
+            {
+                "singleImg": "../images/singleImg/1.png"
+            }
+        ],
+        "singleView": "33",
+        "fullDesc": "Очень крассные часы №3"
     },
     {
         "id": "4",
         "name": "SMART WATCHES",
         "desc": "EXPLODE NOW",
         "price": "$330",
-        "img": "../images/p-4.png"
+        "img": [
+            {
+                "imgToDisplay": "../images/imgToDisplay/p-4.png"
+            }, 
+            {
+                "singleImg": "../images/singleImg/1.png"
+            }
+        ],
+        "singleView": "44",
+        "fullDesc": "Очень крассные часы №4"
     },
     {
         "id": "5",
         "name": "SMART WATCHES",
         "desc": "EXPLODE NOW",
         "price": "$340",
-        "img": "../images/p-5.png"
+        "img": [
+            {
+                "imgToDisplay": "../images/imgToDisplay/p-5.png"
+            }, 
+            {
+                "singleImg": "../images/singleImg/1.png"
+            }
+        ],
+        "singleView": "55",
+        "fullDesc": "Очень крассные часы №5"
     },
     {
         "id": "6",
         "name": "SMART WATCHES",
         "desc": "EXPLODE NOW",
         "price": "$350",
-        "img": "../images/p-6.png"
+        "img": [
+            {
+                "imgToDisplay": "../images/imgToDisplay/p-6.png"
+            }, 
+            {
+                "singleImg": "../images/singleImg/1.png"
+            }
+        ],
+        "singleView": "66",
+        "fullDesc": "Очень крассные часы №6"
     },
     {
         "id": "7",
         "name": "SMART WATCHES",
         "desc": "EXPLODE NOW",
         "price": "$360",
-        "img": "../images/p-7.png"
+        "img": [
+            {
+                "imgToDisplay": "../images/imgToDisplay/p-7.png"
+            }, 
+            {
+                "singleImg": "../images/singleImg/1.png"
+            }
+        ],
+        "singleView": "77",
+        "fullDesc": "Очень крассные часы №7"
     },
     {
         "id": "8",
         "name": "SMART WATCHES",
         "desc": "EXPLODE NOW",
         "price": "$370",
-        "img": "../images/p-8.png"
+        "img": [
+            {
+                "imgToDisplay": "../images/imgToDisplay/p-8.png"
+            }, 
+            {
+                "singleImg": "../images/singleImg/1.png"
+            }
+        ],
+        "singleView": "88",
+        "fullDesc": "Очень крассные часы №8"
     }
 ]

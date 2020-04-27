@@ -31,9 +31,14 @@ if ($requestUri == "/contact") {
 }
 
 if ($requestUri == "/single") {
-    include 'single.html';
+    include 'HTML/single.php';
     die();
 }
+
+// if ($requestUri == '/single/') {
+//     include 'HTML/single.php';
+//     die();
+// }
 
 if ($requestUri == "/register") {
     include 'HTML/register.php';

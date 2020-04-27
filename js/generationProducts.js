@@ -10,7 +10,7 @@ function generateProducts (allProducts) {
             productBlock[0].innerHTML += `
             <div class="col-md-4 product-left">
                 <div class="product-main simpleCart_shelfItem">
-                    <a href="/single" class="mask"><img class="img-responsive zoom-img" src="${product.img}" alt="" /></a>
+                    <a href="/single/${product.singleView}" class="mask"><img class="img-responsive zoom-img" src="${product.img[0].imgToDisplay}" alt="" /></a>
                     <div class="product-bottom">
                         <h3>${product.name}</h3>
                         <p>${product.desc}</p>
@@ -23,7 +23,7 @@ function generateProducts (allProducts) {
             productBlock[0].innerHTML += `
             <div class="col-md-3 product-left">
                 <div class="product-main simpleCart_shelfItem">
-                    <a href="/single" class="mask"><img class="img-responsive zoom-img" src="${product.img}" alt="" /></a>
+                    <a href="/single/${product.singleView}" class="mask"><img class="img-responsive zoom-img" src="${product.img[0].imgToDisplay}" alt="" /></a>
                     <div class="product-bottom">
                         <h3>${product.name}</h3>
                         <p>${product.desc}</p>
@@ -32,6 +32,6 @@ function generateProducts (allProducts) {
                 </div>
             </div>
             `;
-        }
+        }   
     });
 }

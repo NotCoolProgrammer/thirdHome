@@ -9,3 +9,8 @@ function generateUuid() {
         mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff )
     );
 }
+
+function startsWith($haystack, $needle) {
+    $length = strlen($needle);
+    return (substr($haystack, 0, $length) === $needle);
+}

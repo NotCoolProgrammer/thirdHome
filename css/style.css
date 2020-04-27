@@ -1890,6 +1890,15 @@ h3.ghj {
 .logout {
     margin-left: 315px;
 }
+
+.single-top-left img {
+    width: 343px;
+    padding-right: 35px;
+}
+
+.col-md-5.single-top-left {
+
+}
 /*--end-register--*/
 /*--media-quaries-starts-here--*/
 @media (max-width:1440px){
