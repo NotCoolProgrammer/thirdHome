@@ -63,7 +63,7 @@
 		</div>
 	</div>
 
-	<?php require_once 'includes/footer.html' ?>
+<?php require_once 'includes/footer.html' ?>
 
 	<script src="js/responsiveslides.min.js"></script>
 	<script src="js/allDopScripts.js"></script>

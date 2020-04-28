@@ -1,11 +1,10 @@
-<?php require_once 'includes/header.html'  ?>
-	<!--bottom-header-->
+<?php require_once 'includes/header.html' ?>
 	<!--start-breadcrumbs-->
 	<div class="breadcrumbs">
 		<div class="container">
 			<div class="breadcrumbs-main">
 				<ol class="breadcrumb">
-					<li><a href="/">Home</a></li>
+					<li><a href="index.html">Home</a></li>
 					<li class="active">Single</li>
 				</ol>
 			</div>
@@ -16,47 +15,15 @@
 	<div class="single contact">
 		<div class="container">
 			<div class="single-main">
-				<div class="col-md-9 single-main-left" id="insert_unique_product">
-					<div class="sngl-top">
-						<div class="col-md-5 single-top-left">	
-							<img src="images/s-1.jpg" alt="">
-						</div>	
-						<div class="col-md-7 single-top-right">
-							<div class="single-para simpleCart_shelfItem">
-							<h2>Lorem Ipsum</h2>
-							<h5 class="item_price">$ 95.00</h5>
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
-							<div class="available">
-							<ul>
-								<li>Color
-									<select>
-										<option>Silver</option>
-										<option>Black</option>
-										<option>Dark Black</option>
-										<option>Red</option>
-									</select>
-								</li>
-								<li class="size-in">Size
-									<select>
-										<option>Large</option>
-										<option>Medium</option>
-										<option>small</option>
-										<option>Large</option>
-										<option>small</option>
-									</select>
-								</li>
-							<div class="clearfix"> </div>
-							</ul>
+				<div class="col-md-9 single-main-left" id="single-product">
+					<!-- Сюда генерится уникальный продукт -->
+					<div class="latestproducts">
+						<div class="product-one all__products" id="product-top">
+							<!-- Сюда генерятся все продукты -->
+							<div class="clearfix"></div>
 						</div>
-						<a href="/checkout" class="add-cart item_add">ADD TO CART</a>
 					</div>
 				</div>
-				<div class="clearfix"></div>
-				</div>
-				<div class="latestproducts" id="product-top">
-					<!-- Здесь генерируются товары -->
-				</div>
-			</div>
 				<div class="col-md-3 single-right">
 					<div class="w_sidebar">
 						<section  class="sky-form">
@@ -115,15 +82,12 @@
 			</div>
 		</div>
 	</div>
-
-
-
-
-	
+	<!--end-single-->
+	<!--information-starts-->
 	<?php require_once 'includes/footer.html' ?>
-	
-	<!-- <script src="js/allDopScripts.js"></script> -->
+
 	<script src="js/generationProducts.js"></script>
 	<script src="js/renderOneProduct.js"></script>
+
 </body>
 </html>

@@ -34,8 +34,14 @@ if ($requestUri == "/single") {
     include 'HTML/single.php';
     die();
 }
+// $lastValue = explode('/', $requestUri);
+// $lastValue = $lastValue[2];
 
 // if ($requestUri == '/single/') {
+//     $lastValue = explode('/', $requestUri);
+//     $lastValue = $lastValue[2];
+//     // var_dump($requestUri);
+//     // die();
 //     include 'HTML/single.php';
 //     die();
 // }
