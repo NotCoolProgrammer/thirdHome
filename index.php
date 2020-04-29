@@ -4,6 +4,7 @@ session_start();
 include 'CRUD.php';
 
 $requestUri = $_SERVER['REQUEST_URI'];
+$scriptAssets = [];
 
 if ($requestUri == "/") {
     include 'HTML/main.php';
@@ -30,21 +31,20 @@ if ($requestUri == "/contact") {
     die();
 }
 
-if ($requestUri == "/single") {
-    include 'HTML/single.php';
-    die();
-}
-// $lastValue = explode('/', $requestUri);
-// $lastValue = $lastValue[2];
 
-// if ($requestUri == '/single/') {
-//     $lastValue = explode('/', $requestUri);
-//     $lastValue = $lastValue[2];
-//     // var_dump($requestUri);
-//     // die();
-//     include 'HTML/single.php';
-//     die();
-// }
+if (startsWith($requestUri, '/single/')) {
+    // $scriptAssets = ['js/generationProducts.js'];
+    $path = explode('/', $requestUri);
+    $productSingleView = $path[2];
+    $product = getProductSingleView($productSingleView);
+
+    if (is_null($product)) {
+        http_response_code(404);
+        die();
+    } else {
+        generateProduct($product);
+    }
+}
 
 if ($requestUri == "/register") {
     include 'HTML/register.php';

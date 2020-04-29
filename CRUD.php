@@ -8,7 +8,7 @@ include 'optionalFunctions.php';
  *! Функция создания пользователя
  */
 function createUser($firstName, $lastName, $login, $number, $password1, $password2) {
-    if ($password1 == $password2) {
+    if ($password1 === $password2) {
         $uuid = generateUuid();
         $users = getAllUsers();
         $user = [
@@ -24,8 +24,9 @@ function createUser($firstName, $lastName, $login, $number, $password1, $passwor
         file_put_contents(ALL_USERS, json_encode($users));
         return $user;
     } else {
-        throw new Exception ("passwords don't match");
+        // throw new Exception ("passwords don't match");
         header('Location: /register');
+        die();
     }
 }
 

@@ -17,6 +17,11 @@
 			<div class="single-main">
 				<div class="col-md-9 single-main-left" id="single-product">
 					<!-- Сюда генерится уникальный продукт -->
+					<?php
+					
+						$handleRequest();
+
+					?>
 					<div class="latestproducts">
 						<div class="product-one all__products" id="product-top">
 							<!-- Сюда генерятся все продукты -->
@@ -82,12 +87,10 @@
 			</div>
 		</div>
 	</div>
-	<!--end-single-->
-	<!--information-starts-->
 	<?php require_once 'includes/footer.html' ?>
-
-	<script src="js/generationProducts.js"></script>
-	<script src="js/renderOneProduct.js"></script>
-
+	
+	<?php foreach ($scriptAssets as $scriptAsset): ?>
+	<script src="<?php echo $scriptAsset ?>"></script>
+	<?php endforeach; ?>
 </body>
 </html>
