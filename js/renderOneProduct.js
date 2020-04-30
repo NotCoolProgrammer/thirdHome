@@ -3,14 +3,8 @@
  */
 $(document).ready( function() {
     let singleProduct = $("#single-product");
-    let addr;
     
     $.get('goods/goods.json', function (allProducts) {
-        // allProducts.forEach(product => {
-        //     if (product.singleView === addr) {
-        //         generateOneProduct(product);
-        //     }
-        // });
         generateOneProduct(allProducts[0]);
     });
     

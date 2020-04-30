@@ -80,5 +80,6 @@
 	</div>
 	<?php require_once 'includes/footer.html' ?>
 	<script src="js/generationProducts.js"></script>
+	<script src="js/addProductToCart.js"></script>
 </body>
 </html>

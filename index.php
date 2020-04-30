@@ -2,8 +2,12 @@
 session_start();
 
 include 'CRUD.php';
+// include 'php/Basket.php';
+
+define('PRODUCTSinBASKET', 'goods/productsInBasket.json');
 
 $requestUri = $_SERVER['REQUEST_URI'];
+$requestMethod = $_SERVER['REQUEST_METHOD'];
 $scriptAssets = [];
 
 if ($requestUri == "/") {
@@ -17,6 +21,17 @@ if ($requestUri == "/account") {
 }
 
 if ($requestUri == "/checkout") {
+    if ($requestMethod === 'POST') {
+        // $product = $_GET['product'];
+        // var_dump($product);
+        echo "post";
+        die();
+    }
+
+    if ($requestMethod === "GET") {
+        echo "get";
+        die();
+    }
     include 'HTML/checkout.php';
     die();
 }
@@ -78,6 +93,14 @@ if ($requestUri == '/registeredUser') {     //Регистрация польз�
 }
 
 if ($requestUri == '/logout') {
+    $users = json_decode(file_get_contents(PRODUCTSinBASKET), true);
+
+    // foreach ($users as $user) {
+    //     unset($user);
+    // }
+
+    // unset($user);
+    
     session_destroy();
     header('Location: /');
     die();
@@ -93,7 +116,10 @@ function authorize () {
             die();
         } else if ($user['active'] && $user['login'] == $login && password_verify($password, $user['password'])) {
             $_SESSION['currentUser'] = $user;
+            $user['products'] = [];
+            file_put_contents(PRODUCTSinBASKET, json_encode($user));
             header('Location: /');
+            die();
         } else {
             header('Location: /account');
         }
@@ -111,6 +137,6 @@ function getAllData () {
     return array($firstName, $lastName, $login, $number, $password1, $password2);
 }
 
-http_response_code(404);
-die();
+// http_response_code(404);
+// die();
 ?>

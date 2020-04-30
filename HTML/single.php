@@ -92,5 +92,6 @@
 	<?php foreach ($scriptAssets as $scriptAsset): ?>
 	<script src="<?php echo $scriptAsset ?>"></script>
 	<?php endforeach; ?>
+	<script src="/js/addProductToCart.js"></script>
 </body>
 </html>
