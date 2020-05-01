@@ -1,12 +1,18 @@
 $(document).ready(function() {
     let productBlock = $('#product-top');
 
+    //get запрос на получения всех товаров
     $.get('../goods/goods.json', function (allProducts) {
         generateProducts(allProducts);
     });
     
+    /**
+     * Функция генерации всех товаров
+     * @param {object} allProducts 
+     */
     function generateProducts (allProducts) {
         allProducts.forEach(product => {
+            //разметка в верстке такая, что на разных страницах разные классы, поэтому тут условие
             if ($('#product-top').hasClass('col-md-9') || $('#product-top').hasClass('all__products')) {
                 let div = $('<div></div>', {
                     class: 'col-md-4 product-left'

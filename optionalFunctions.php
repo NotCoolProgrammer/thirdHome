@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Функция генерации uuid
+ */
 function generateUuid() {
     return sprintf( '%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
         mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ),
@@ -10,17 +12,25 @@ function generateUuid() {
     );
 }
 
+/**
+ * Функция связанная с адресной строкой
+ */
 function startsWith($haystack, $needle) {
     $length = strlen($needle);
     return (substr($haystack, 0, $length) === $needle);
 }
 
+/**
+ * Функция получения все товаров из файла
+ */
 function getProducts () {
     $data = json_decode(file_get_contents('goods/goods.json'), true);
     return $data;
-    // var_dump($data);
 }
 
+/**
+ * Функция получения товара по свойству singleView
+ */
 function getProductSingleView ($singleView) {
     foreach (getProducts() as $product) {
         if ($product['singleView'] == $singleView) {
@@ -30,6 +40,9 @@ function getProductSingleView ($singleView) {
     return null;
 }
 
+/**
+ * Функция генерации товара
+ */
 function generateProduct ($product) {
     $scriptAssets = ['../js/generationProducts.js'];
     $handleRequest = function () use ($product) {

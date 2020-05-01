@@ -2,7 +2,6 @@
 session_start();
 
 include 'CRUD.php';
-// include 'php/Basket.php';
 
 define('PRODUCTSinBASKET', 'goods/productsInBasket.json');
 
@@ -22,15 +21,15 @@ if ($requestUri == "/account") {
 
 if ($requestUri == "/checkout") {
     if ($requestMethod === 'POST') {
-        // $product = $_GET['product'];
+        // $product = $_POST['product'];
         // var_dump($product);
         echo "post";
-        die();
+        // die();
     }
 
     if ($requestMethod === "GET") {
         echo "get";
-        die();
+        // die();
     }
     include 'HTML/checkout.php';
     die();
@@ -53,6 +52,7 @@ if (startsWith($requestUri, '/single/')) {
     $productSingleView = $path[2];
     $product = getProductSingleView($productSingleView);
 
+    //если не существует такого значения у свойства singleView у продукта, то 404
     if (is_null($product)) {
         http_response_code(404);
         die();
@@ -92,20 +92,15 @@ if ($requestUri == '/registeredUser') {     //Регистрация польз�
     die();
 }
 
-if ($requestUri == '/logout') {
-    $users = json_decode(file_get_contents(PRODUCTSinBASKET), true);
-
-    // foreach ($users as $user) {
-    //     unset($user);
-    // }
-
-    // unset($user);
-    
+if ($requestUri == '/logout') {    
     session_destroy();
     header('Location: /');
     die();
 }
 
+/**
+ * Функция авторизации
+ */
 function authorize () {
     $login = filter_var($_POST['login'], FILTER_SANITIZE_STRING);
     $password = filter_var($_POST['password'], FILTER_SANITIZE_STRING);
@@ -116,7 +111,8 @@ function authorize () {
             die();
         } else if ($user['active'] && $user['login'] == $login && password_verify($password, $user['password'])) {
             $_SESSION['currentUser'] = $user;
-            $user['products'] = [];
+            $user['products'] = [];     //добавляю свойство products, в которое можно было бы
+            //в последствии добавлять товары у авторизованного пользователя и выводить их в корзине
             file_put_contents(PRODUCTSinBASKET, json_encode($user));
             header('Location: /');
             die();
@@ -127,6 +123,9 @@ function authorize () {
     die();
 }
 
+/**
+ * Функция получения всех данных с формы регистрации
+ */
 function getAllData () {
     $firstName = filter_var($_POST['firstName'], FILTER_SANITIZE_STRING);
     $lastName = filter_var($_POST['lastName'], FILTER_SANITIZE_STRING);
@@ -137,6 +136,6 @@ function getAllData () {
     return array($firstName, $lastName, $login, $number, $password1, $password2);
 }
 
-// http_response_code(404);
-// die();
+http_response_code(404);
+die();
 ?>
