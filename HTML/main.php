@@ -63,7 +63,12 @@
 		</div>
 	</div>
 
-<?php require_once 'includes/footer.html' ?>
+	<?php require_once 'includes/footer.html' ?>
+
+	<div class="info__about__add__product__to__cart">
+		<p>Товар успешно добавлен в корзину</p>
+		<div class="sizes"><i class="far fa-times-circle"></i></div>
+	</div>
 
 	<script src="js/responsiveslides.min.js"></script>
 	<script src="js/allDopScripts.js"></script>

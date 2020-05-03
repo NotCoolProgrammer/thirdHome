@@ -1896,8 +1896,44 @@ h3.ghj {
     padding-right: 35px;
 }
 
-.col-md-5.single-top-left {
+.cart__img {
+    width:  82px;
+    height: 117px;
+}
 
+.info__about__add__product__to__cart {
+    display: none;
+    position: fixed;
+    width: 370px;
+    height: 115px;
+    background-color: #ebecee;
+    top: 36%;
+    left: 36%;
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 1000;
+}
+
+.info__about__add__product__to__cart p {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 25px;
+}
+
+.info__about__add__product__to__cart .sizes {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin: 5px;
+}
+
+.info__about__add__product__to__cart .sizes i {
+    font-size: 30px;
 }
 /*--end-register--*/
 /*--media-quaries-starts-here--*/

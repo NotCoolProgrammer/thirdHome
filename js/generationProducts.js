@@ -23,7 +23,7 @@ $(document).ready(function() {
                     <div class="product-bottom">
                         <h3>${product.name}</h3>
                         <p>${product.desc}</p>
-                        <h4><a class="item_add" href="/checkout" id ="${product.id}"><i></i></a> <span class=" item_price">${product.price}</span></h4>
+                        <h4><span class="item_add" id ="${product.id}"><i></i></span> <span class=" item_price">${product.price}</span></h4>
                     </div>
                 </div>`).appendTo(div);
                 div.prependTo(productBlock);
@@ -37,7 +37,7 @@ $(document).ready(function() {
                     <div class="product-bottom">
                         <h3>${product.name}</h3>
                         <p>${product.desc}</p>
-                        <h4><a class="item_add" href="/checkout" id ="${product.id}"><i></i></a> <span class=" item_price">${product.price}</span></h4>
+                        <h4><span class="item_add" id ="${product.id}"><i></i></span> <span class=" item_price">${product.price}</span></h4>
                     </div>
                 </div>`).appendTo(div);
                 div.prependTo(productBlock);

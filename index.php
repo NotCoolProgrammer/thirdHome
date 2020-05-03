@@ -1,13 +1,12 @@
 <?php
 session_start();
-
 include 'CRUD.php';
-
 define('PRODUCTSinBASKET', 'goods/productsInBasket.json');
 
 $requestUri = $_SERVER['REQUEST_URI'];
 $requestMethod = $_SERVER['REQUEST_METHOD'];
 $scriptAssets = [];
+
 
 if ($requestUri == "/") {
     include 'HTML/main.php';
@@ -20,17 +19,26 @@ if ($requestUri == "/account") {
 }
 
 if ($requestUri == "/checkout") {
-    if ($requestMethod === 'POST') {
-        // $product = $_POST['product'];
-        // var_dump($product);
-        echo "post";
-        // die();
-    }
-
-    if ($requestMethod === "GET") {
-        echo "get";
-        // die();
-    }
+    if ($requestMethod == 'POST' && isset($_SESSION['currentUser'])) {
+        $products = json_decode(file_get_contents(PRODUCTSinBASKET), true);
+        // $file = fopen('goods/productsInBasket.json', 'w+');
+        $id = $_POST['id'];
+        $price = $_POST['price'];
+        $name = $_POST['name'];
+        $singleView = $_POST['singleView'];
+        $imgSrc = $_POST['img'];
+        $product = ['id' => $id, 'price' => $price, 'name' => $name, 'imgSrc' => $imgSrc, 'singleView' => $singleView];
+        $products[] = $product;
+        // fwrite($file, json_encode($products));
+        // fclose($file);
+        file_put_contents(PRODUCTSinBASKET, json_encode($products));
+        die();
+    } 
+    // else {
+    //     $handleRequest = function () {
+    //         echo 'Вы не авторизованы, пожалуйста пройдите по ссылке http://mybrand.com/account';
+    //     };
+    // }
     include 'HTML/checkout.php';
     die();
 }
@@ -67,6 +75,7 @@ if ($requestUri == "/register") {
 }
 
 if ($requestUri == '/auth') {
+    // session_start();
     authorize();
     die();
 }
@@ -94,6 +103,7 @@ if ($requestUri == '/registeredUser') {     //Регистрация польз�
 
 if ($requestUri == '/logout') {    
     session_destroy();
+    // unset($_COOKIE);
     header('Location: /');
     die();
 }
@@ -111,9 +121,9 @@ function authorize () {
             die();
         } else if ($user['active'] && $user['login'] == $login && password_verify($password, $user['password'])) {
             $_SESSION['currentUser'] = $user;
-            $user['products'] = [];     //добавляю свойство products, в которое можно было бы
+            // $user['products'] = [];     //добавляю свойство products, в которое можно было бы
             //в последствии добавлять товары у авторизованного пользователя и выводить их в корзине
-            file_put_contents(PRODUCTSinBASKET, json_encode($user));
+            // file_put_contents(PRODUCTSinBASKET, json_encode($user));
             header('Location: /');
             die();
         } else {
