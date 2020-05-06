@@ -19,14 +19,17 @@
 				<h2>ACCOUNT</h2>
 			</div>
 			<div class="account-main">
-				<form class="col-md-6 account-left" method = "POST" action="/auth">
+				<form class="col-md-6 account-left" method = "POST" action="/auth" id="authForm">
+				<!-- <form class="col-md-6 account-left" id="authForm"> -->
 					<h3>Existing User</h3>
 					<div class="account-bottom">
-						<input placeholder="Email" type="text" tabindex="3" id="login" name="login" required>
-						<input placeholder="Password" type="password" tabindex="4" id="password" name="password" required>
+						<input placeholder="Email" type="text" id="login" name="login">
+						<p class="warningEmail">Email вида letters.letters@mail.ru</p>
+						<input placeholder="Password" type="password" id="password" name="password">
+						<p class="warningPassword">Пароль от 5 символов</p>
 						<div class="address">
 							<a class="forgot" href="#">Forgot Your Password?</a>
-							<input type="submit" value="Login">
+							<input type="submit" value="Login" id="submit">
 						</div>
 					</div>
 				</form>
@@ -44,5 +47,8 @@
 	<!--information-starts-->
 	<?php require_once 'includes/footer.html' ?>
 	<!--footer-end-->	
+
+	<script src="js/totalPriceOfProducts.js"></script>
+	<script src="js/validationAuthForm.js"></script>
 </body>
 </html>

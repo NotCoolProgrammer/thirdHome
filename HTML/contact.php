@@ -34,13 +34,25 @@
 						</div>
 					</div>
 					<div class="col-md-9 contact-right">
-						<form>
-							<input type="text" placeholder="Name">
-							<input type="text" placeholder="Phone">
-							<input type="text"  placeholder="Email">
-							<textarea placeholder="Message" required=""></textarea>
+						<form id="feedback" method="POST" id="feedbackForm">
+							<div class="common__input__fields">
+								<div class="block1">
+									<input type="text" placeholder="Name" name="firstName" id="firstName">
+									<p class="warning1">Имя на русском, не более 15 букв</p>
+								</div>
+								<div class="block2">
+									<input type="text" placeholder="Phone" name="phone" id="phone">
+									<p class="warning2">Телефон в формате +70000000000</p>
+								</div>
+								<div class="block3">
+									<input type="text"  placeholder="Email" name="email" id="email">
+									<p class="warning3">Email вида letters.letters@mail.ru</p>
+								</div>
+							</div>
+							<textarea placeholder="Message" name="message" id="message"></textarea>
+							<p class="warning4">Сообщение от 10 букв</p>
 							<div class="submit-btn">
-								<input type="submit" value="SUBMIT">
+								<input type="submit" value="SUBMIT" id="submit" name="submit">
 							</div>
 						</form>
 					</div>	
@@ -57,5 +69,9 @@
 	<br />
 
 	<?php require_once 'includes/footer.html' ?>
+
+	<div class="shadow"></div>
+	<script src="js/totalPriceOfProducts.js"></script>
+	<script src="js/validationFeedbackForm.js"></script>
 </body>
 </html>

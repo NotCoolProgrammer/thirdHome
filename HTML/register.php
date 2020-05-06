@@ -40,5 +40,6 @@
 	<!--information-starts-->
 	<?php require_once 'includes/footer.html' ?>
 	<!--footer-end-->	
+	<script src="js/totalPriceOfProducts.js"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-
+<?php include '/index.php'  ?>
 <?php require_once 'includes/header.html' ?>
 	<!--banner-starts-->
 	<div class="bnr" id="home">
@@ -66,13 +66,19 @@
 	<?php require_once 'includes/footer.html' ?>
 
 	<div class="info__about__add__product__to__cart">
-		<p>Товар успешно добавлен в корзину</p>
-		<div class="sizes"><i class="far fa-times-circle"></i></div>
+		<p class="notification__text"></p>
+		<div class="close__window"><i class="far fa-times-circle"></i></div>
 	</div>
+
+	<script>
+		let session = "<?php echo $_SESSION['currentUser']; ?>"
+	</script>
 
 	<script src="js/responsiveslides.min.js"></script>
 	<script src="js/allDopScripts.js"></script>
 	<script src="js/generationProducts.js"></script>
 	<script src="js/addProductToCart.js"></script>
+	<script src="js/totalPriceOfProducts.js"></script>
+
 </body>
 </html>

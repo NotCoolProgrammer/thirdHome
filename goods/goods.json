@@ -3,7 +3,7 @@
         "id": "1",
         "name": "SMART WATCHES",
         "desc": "EXPLODE NOW",
-        "price": "$300",
+        "price": "300",
         "img": [
             {
                 "imgToDisplay": "../images/imgToDisplay/p-1.png"
@@ -31,7 +31,7 @@
         "id": "2",
         "name": "SMART WATCHES",
         "desc": "EXPLODE NOW",
-        "price": "$310",
+        "price": "310",
         "img": [
             {
                 "imgToDisplay": "../images/imgToDisplay/p-2.png"
@@ -59,7 +59,7 @@
         "id": "3",
         "name": "SMART WATCHES",
         "desc": "EXPLODE NOW",
-        "price": "$320",
+        "price": "320",
         "img": [
             {
                 "imgToDisplay": "../images/imgToDisplay/p-3.png"
@@ -87,7 +87,7 @@
         "id": "4",
         "name": "SMART WATCHES",
         "desc": "EXPLODE NOW",
-        "price": "$330",
+        "price": "330",
         "img": [
             {
                 "imgToDisplay": "../images/imgToDisplay/p-4.png"
@@ -115,7 +115,7 @@
         "id": "5",
         "name": "SMART WATCHES",
         "desc": "EXPLODE NOW",
-        "price": "$340",
+        "price": "340",
         "img": [
             {
                 "imgToDisplay": "../images/imgToDisplay/p-5.png"
@@ -143,7 +143,7 @@
         "id": "6",
         "name": "SMART WATCHES",
         "desc": "EXPLODE NOW",
-        "price": "$350",
+        "price": "350",
         "img": [
             {
                 "imgToDisplay": "../images/imgToDisplay/p-6.png"
@@ -171,7 +171,7 @@
         "id": "7",
         "name": "SMART WATCHES",
         "desc": "EXPLODE NOW",
-        "price": "$360",
+        "price": "360",
         "img": [
             {
                 "imgToDisplay": "../images/imgToDisplay/p-7.png"
@@ -199,7 +199,7 @@
         "id": "8",
         "name": "SMART WATCHES",
         "desc": "EXPLODE NOW",
-        "price": "$370",
+        "price": "370",
         "img": [
             {
                 "imgToDisplay": "../images/imgToDisplay/p-8.png"

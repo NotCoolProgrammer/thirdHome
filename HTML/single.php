@@ -88,10 +88,18 @@
 		</div>
 	</div>
 	<?php require_once 'includes/footer.html' ?>
+
+	<div class="info__about__add__product__to__cart">
+		<p class="notification__text"></p>
+		<div class="close__window"><i class="far fa-times-circle"></i></div>
+	</div>
+
+	<script>
+		let session = "<?php echo $_SESSION['currentUser']; ?>"
+	</script>
 	
-	<?php foreach ($scriptAssets as $scriptAsset): ?>
-	<script src="<?php echo $scriptAsset ?>"></script>
-	<?php endforeach; ?>
+	<script src="/js/generationProducts.js"></script>
 	<script src="/js/addProductToCart.js"></script>
+	<script src="/js/totalPriceOfProducts.js"></script>
 </body>
 </html>

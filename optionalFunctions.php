@@ -44,7 +44,6 @@ function getProductSingleView ($singleView) {
  * Функция генерации товара
  */
 function generateProduct ($product) {
-    $scriptAssets = ['../js/generationProducts.js'];
     $handleRequest = function () use ($product) {
         include 'php/generateProduct.php';
     };

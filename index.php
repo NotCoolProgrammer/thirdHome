@@ -5,7 +5,7 @@ define('PRODUCTSinBASKET', 'goods/productsInBasket.json');
 
 $requestUri = $_SERVER['REQUEST_URI'];
 $requestMethod = $_SERVER['REQUEST_METHOD'];
-$scriptAssets = [];
+
 
 
 if ($requestUri == "/") {
@@ -34,11 +34,6 @@ if ($requestUri == "/checkout") {
         file_put_contents(PRODUCTSinBASKET, json_encode($products));
         die();
     } 
-    // else {
-    //     $handleRequest = function () {
-    //         echo 'Вы не авторизованы, пожалуйста пройдите по ссылке http://mybrand.com/account';
-    //     };
-    // }
     include 'HTML/checkout.php';
     die();
 }
@@ -55,7 +50,6 @@ if ($requestUri == "/contact") {
 
 
 if (startsWith($requestUri, '/single/')) {
-    // $scriptAssets = ['js/generationProducts.js'];
     $path = explode('/', $requestUri);
     $productSingleView = $path[2];
     $product = getProductSingleView($productSingleView);
@@ -75,7 +69,6 @@ if ($requestUri == "/register") {
 }
 
 if ($requestUri == '/auth') {
-    // session_start();
     authorize();
     die();
 }

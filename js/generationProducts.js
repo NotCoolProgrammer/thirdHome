@@ -5,7 +5,7 @@ $(document).ready(function() {
     $.get('../goods/goods.json', function (allProducts) {
         generateProducts(allProducts);
     });
-    
+
     /**
      * Функция генерации всех товаров
      * @param {object} allProducts 
@@ -23,7 +23,7 @@ $(document).ready(function() {
                     <div class="product-bottom">
                         <h3>${product.name}</h3>
                         <p>${product.desc}</p>
-                        <h4><span class="item_add" id ="${product.id}"><i></i></span> <span class=" item_price">${product.price}</span></h4>
+                        <h4><span class="item_add" id ="${product.id}"><i></i></span> <div class=" item_price"><span class ="name__of__the__currency">$</span><span class="cost__of__product">${product.price}</span></div></h4>
                     </div>
                 </div>`).appendTo(div);
                 div.prependTo(productBlock);
@@ -37,7 +37,7 @@ $(document).ready(function() {
                     <div class="product-bottom">
                         <h3>${product.name}</h3>
                         <p>${product.desc}</p>
-                        <h4><span class="item_add" id ="${product.id}"><i></i></span> <span class=" item_price">${product.price}</span></h4>
+                        <h4><span class="item_add" id ="${product.id}"><i></i></span> <div class=" item_price"><span class ="name__of__the__currency">$</span><span class="cost__of__product">${product.price}</span></div></h4>
                     </div>
                 </div>`).appendTo(div);
                 div.prependTo(productBlock);

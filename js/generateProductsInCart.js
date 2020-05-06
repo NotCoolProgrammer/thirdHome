@@ -3,7 +3,6 @@ $(document).ready(function () {
     $.get('../goods/productsInBasket.json', function (allProducts) {
         generateProductsInCart(allProducts);
         deleteProducts(allProducts);
-        // rePushProductsToPhp();
     });
 
     function generateProductsInCart(allProducts) {
@@ -16,7 +15,7 @@ $(document).ready(function () {
                 <li class="ring-in"><a href="/single/${product.singleView}" ><img src="../images/imgToDisplay/${product.imgSrc}" class="img-responsive cart__img" alt=""></a>
                 </li>
                 <li><span class="name">${product.name}</span></li>
-                <li><span class="cost">${product.price}</span></li>
+                <li class="info__about__price"><span class="name__of__the__currency">$</span><span class="cost">${product.price}</span></li>
                 <li><span>Free</span>
                 <p>Delivered in 2-3 business days</p></li>
                 <div class="clearfix"> </div>
