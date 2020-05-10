@@ -35,40 +35,24 @@ function showNotification (e) {
             changeProductPrice(e);
             addProductToCart(e);
             let notificationText = $('.notification__text');
-            // let hiddenBlock = $('.info__about__add__product__to__cart');
-            // let windowCloseButton = $('.close__window');
-
             notificationText[0].textContent = 'Товар добавлен в корзину';
             $('.info__about__add__product__to__cart').css('left', '40%');
-            // hiddenBlock.css('display', 'block');
-            // windowCloseButton.on('click', function () {
-            //     hiddenBlock.css('display', 'none');
-            // });
-            // setTimeout(() => {
-            //     hiddenBlock.css('display', 'none');
-            // }, 3500);
+
         } else {
             let notificationText = $('.notification__text');
             notificationText[0].innerHTML = `Вы не авторизованы, полажуйста перейдите по ссылке <a href ="http://myBrand.com/account">http://myBrand.com/account</a>`;
             $('.info__about__add__product__to__cart').css('left', '25%');
         }
 
-
         let hiddenBlock = $('.info__about__add__product__to__cart');
         let windowCloseButton = $('.close__window');
         hiddenBlock.css('display', 'block');
-
         windowCloseButton.on('click', function () {
             hiddenBlock.css('display', 'none');
         });
-
         setTimeout(() => {
             hiddenBlock.css('display', 'none');
         }, 3500);
-
-        // windowCloseButton.on('click', function () {
-        //     hiddenBlock.css('display', 'none');
-        // });
     })
 }
 
