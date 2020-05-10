@@ -1,16 +1,4 @@
 <?php
-/**
- * Функция генерации uuid
- */
-function generateUuid() {
-    return sprintf( '%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
-        mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ),
-        mt_rand( 0, 0xffff ),
-        mt_rand( 0, 0x0fff ) | 0x4000,
-        mt_rand( 0, 0x3fff ) | 0x8000,
-        mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff )
-    );
-}
 
 /**
  * Функция связанная с адресной строкой
@@ -21,11 +9,15 @@ function startsWith($haystack, $needle) {
 }
 
 /**
- * Функция получения все товаров из файла
+ * Функция получения все товаров из базы данных
  */
 function getProducts () {
-    $data = json_decode(file_get_contents('goods/goods.json'), true);
-    return $data;
+    try {
+        $products = getAllProductsToGenerateUniqueOne();
+        return json_decode($products, true);
+    } catch (InvalidArgumentException $exception) {
+        die('Не удалось получить все товары из базы данных');
+    }
 }
 
 /**
@@ -33,7 +25,7 @@ function getProducts () {
  */
 function getProductSingleView ($singleView) {
     foreach (getProducts() as $product) {
-        if ($product['singleView'] == $singleView) {
+        if ($product['singleview'] == $singleView) {
             return $product;
         }
     }

@@ -1518,6 +1518,12 @@ ul.unit li {
     width: 25%;
     float: left;
 }
+
+ul.cart-header {
+    display: flex;
+    align-items: center;
+}
+
 ul.cart-header li p,ul.cart-header1 li p,ul.cart-header2 li p{
     font-size: 11px;
     line-height: 1.6em;
@@ -1546,7 +1552,7 @@ ul.cart-header li, ul.cart-header1 li, ul.cart-header2 li {
     float: left;
 }
 ul.cart-header li span,ul.cart-header1 li span,ul.cart-header2 li span{
-	margin: 2.1em 0 0;
+	/* margin: 2.1em 0 0; */
 	display: block;
 	color:#000;
 	font-size: 1.05em;
@@ -1554,7 +1560,7 @@ ul.cart-header li span,ul.cart-header1 li span,ul.cart-header2 li span{
 }
 span.cost {
     font-size: 1.4em !important;
-    margin-top: 1.4em !important;
+    /* margin-top: 1.4em !important; */
 }
 .in-check {
 	margin-top: 2%;
@@ -1577,7 +1583,7 @@ span.cost {
 }
 span.name {
     font-size: 1.35em !important;
-    margin-top: 1.45em !important;
+    /* margin-top: 1.45em !important; */
 }
 /*--end-checkout--*/
 /*--starts-single--*/
@@ -1866,17 +1872,6 @@ h3.ghj {
 }
 
 
-.account-bottom .warningEmail, .account-bottom .warningPassword {
-    margin-top: 9px;
-    margin-bottom: 9px;
-    color: red;
-    font-size: 15px;
-    display: none;
-}
-
-
-
-
 .account-left p{
 	margin: 1.2em 0 2.2em 0;
 	font-size:14px;
@@ -2010,12 +2005,30 @@ h3.ghj {
     width: 240px;
 }
 
-.warning1, .warning2, .warning3, .warning4 {
-    display: none;
-    color: red;
-    font-size: 15px;
+.account-left .warningFirstName, .account-left .warningLastName, .account-left .warningEmail, 
+.account-left .warningNumber, .account-left .warningPassword1, 
+.account-left .warningPassword2, .account-left .warningPassword,
+.warning1, .warning2, .warning3, .warning4, .account-bottom .warningEmail,
+.account-bottom .warningPassword {
     margin-top: 9px;
     margin-bottom: 9px;
+    font-size: 15px;
+    color: red;
+    display: none;
+}
+
+.descWarning {
+    display: flex;
+    flex-direction: column;
+}
+
+.name__of__the__currency {
+    margin-top: 4px;
+    margin-right: 2px;
+}
+
+.info__about__delivery {
+    font-size: 16px;
 }
 
 

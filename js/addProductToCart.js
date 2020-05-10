@@ -1,7 +1,5 @@
 $(document).ready(function() {
     $(document).on('click', '.item_add', function (e) {
-        addProductToCart(e);
-
         showNotification(e);
     })
 })
@@ -31,38 +29,39 @@ function addProductToCart(e) {
  * Функция показа уведомления при клике на товар
  */
 function showNotification (e) {
-    //session определена в 3 файлах, где есть продукты (main.php, products.php, single.php)
-    let session1 = session;
-    let hiddenBlock = $('.info__about__add__product__to__cart');
-    let windowCloseButton = $('.close__window');
-    if (session1 == "Array") {
-        changeProductPrice(e);
-        let notificationText = $('.notification__text');
-        notificationText[0].textContent = 'Товар добавлен в корзину';
-        $('.info__about__add__product__to__cart').css('left', '40%');
+    $.post('/session', {}, function (data) {
+        let session = JSON.parse(data); 
+        if (session) {
+            changeProductPrice(e);
+            addProductToCart(e);
+            let notificationText = $('.notification__text');
+            let hiddenBlock = $('.info__about__add__product__to__cart');
+            let windowCloseButton = $('.close__window');
 
-    } else {
-        let notificationText = $('.notification__text');
-        notificationText[0].innerHTML = `Вы не авторизованы, полажуйста перейдите по ссылке <a href ="http://myBrand.com/account">http://myBrand.com/account</a>`;
-        $('.info__about__add__product__to__cart').css('left', '25%');
-    }
-
-    hiddenBlock.css('display', 'block');
-
-    windowCloseButton.on('click', function () {
-        hiddenBlock.css('display', 'none');
-    });
-    
-    setTimeout(() => {
-        hiddenBlock.css('display', 'none');
-    }, 3500);
+            notificationText[0].textContent = 'Товар добавлен в корзину';
+            $('.info__about__add__product__to__cart').css('left', '40%');
+            hiddenBlock.css('display', 'block');
+            windowCloseButton.on('click', function () {
+                hiddenBlock.css('display', 'none');
+            });
+            setTimeout(() => {
+                hiddenBlock.css('display', 'none');
+            }, 3500);
+        } else {
+            let notificationText = $('.notification__text');
+            notificationText[0].innerHTML = `Вы не авторизованы, полажуйста перейдите по ссылке <a href ="http://myBrand.com/account">http://myBrand.com/account</a>`;
+            $('.info__about__add__product__to__cart').css('left', '25%');
+        }
+    })
 }
 
+/**
+ * Функция изменения цены товара при клике на корзинку товара
+ */
 function changeProductPrice (e) {
     let span = document.getElementsByClassName('simpleCart_total');
     let totalPrice = Number(span[0].textContent);
     let priceOfProduct = Number(e.currentTarget.parentNode.children[1].children[1].textContent);
     totalPrice += priceOfProduct;
     span[0].innerHTML = totalPrice;
-    // console.log(totalPrice); 
 }

@@ -48,7 +48,7 @@
 									<input type="text"  placeholder="Email" name="email" id="email">
 									<p class="warning3">Email вида letters.letters@mail.ru</p>
 								</div>
-							</div>
+							</div>	
 							<textarea placeholder="Message" name="message" id="message"></textarea>
 							<p class="warning4">Сообщение от 10 букв</p>
 							<div class="submit-btn">

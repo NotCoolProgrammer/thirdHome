@@ -1,13 +1,17 @@
 function setTotalPriceOfAllProductsInCart () {
-    $.get('../goods/productsInBasket.json', function (allProducts) {
-        console.log(allProducts);
-        let span = document.getElementsByClassName('simpleCart_total');
-        let totalPrice = Number(span[0].textContent);
-        for(let i = 0; i < allProducts.length; i++) {
-            totalPrice += Number(allProducts[i].price);
-        }
-        span[0].innerHTML = totalPrice;
-    });
+    let span = document.getElementsByClassName('simpleCart_total'); 
+    $.post('/session', {}, function (data) {
+        let userSession = JSON.parse(data);
+        let userSessionID = userSession.id;
+        $.post('/totalPrice', {userSessionID}, function (data) {
+            let object = JSON.parse(data);
+            let totalPrice = object.sum;
+            if (totalPrice == null) {
+                totalPrice = 0;
+            }
+            span[0].innerHTML = totalPrice;
+        })
+    })
 }
 
 setTotalPriceOfAllProductsInCart();

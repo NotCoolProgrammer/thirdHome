@@ -1,4 +1,3 @@
-<?php include '/index.php'  ?>
 <?php require_once 'includes/header.html' ?>
 	<!--banner-starts-->
 	<div class="bnr" id="home">
@@ -69,10 +68,6 @@
 		<p class="notification__text"></p>
 		<div class="close__window"><i class="far fa-times-circle"></i></div>
 	</div>
-
-	<script>
-		let session = "<?php echo $_SESSION['currentUser']; ?>"
-	</script>
 
 	<script src="js/responsiveslides.min.js"></script>
 	<script src="js/allDopScripts.js"></script>

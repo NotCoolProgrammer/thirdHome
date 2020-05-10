@@ -2,14 +2,14 @@
     <div class="col-md-5 single-top-left">	
         <div class="flexslider">
             <ul class="slides">
-                <li data-thumb="<?php echo $product['img'][2]['firstImg'] ?>">
-                    <div class="thumb-image"> <img src="<?php echo $product['img'][2]['firstImg'] ?>" data-imagezoom="true" class="img-responsive" alt=""/> </div>
+                <li data-thumb="<?php echo $product['firstimg'] ?>">
+                    <div class="thumb-image"> <img src="<?php echo $product['firstimg'] ?>" data-imagezoom="true" class="img-responsive" alt=""/> </div>
                 </li>
-                <li data-thumb="<?php echo $product['img'][3]['secondImg'] ?>">
-                    <div class="thumb-image"> <img src="<?php echo $product['img'][3]['secondImg'] ?>" data-imagezoom="true" class="img-responsive" alt=""/> </div>
+                <li data-thumb="<?php echo $product['secondimg'] ?>">
+                    <div class="thumb-image"> <img src="<?php echo $product['secondimg'] ?>" data-imagezoom="true" class="img-responsive" alt=""/> </div>
                 </li>
-                <li data-thumb="<?php echo $product['img'][4]['thirdImg'] ?>">
-                <div class="thumb-image"> <img src="<?php echo $product['img'][4]['thirdImg'] ?>" data-imagezoom="true" class="img-responsive" alt=""/> </div>
+                <li data-thumb="<?php echo $product['thirdimg'] ?>">
+                <div class="thumb-image"> <img src="<?php echo $product['thirdimg'] ?>" data-imagezoom="true" class="img-responsive" alt=""/> </div>
                 </li> 
             </ul>
         </div>
@@ -32,7 +32,7 @@
         <div class="single-para simpleCart_shelfItem">
             <h2><?php echo $product['name']; ?></h2>
             <h5 class="item_price"><?php echo $product['price']; ?></h5>
-            <p><?php echo $product['fullDesc'];  ?> </p>
+            <p><?php echo $product['fulldesc'];  ?> </p>
             <div class="available">
                 <ul>
                     <li>Color
