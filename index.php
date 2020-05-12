@@ -11,6 +11,9 @@ $requestMethod = $_SERVER['REQUEST_METHOD'];
 
 
 if ($requestUri == "/") {
+    // connection();
+    // die();
+
     include 'HTML/main.php';
     die();
 }
@@ -41,6 +44,8 @@ if ($requestUri == "/cart") {
     } catch (InvalidArgumentException $exception) {
         die ('Не удалось получить товары пользователя из базы данных');
     }
+    // getAllUserProductsFromDB();
+    // die();
 }
 
 if ($requestUri == "/products") {

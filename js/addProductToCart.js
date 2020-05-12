@@ -1,6 +1,7 @@
 $(document).ready(function() {
     $(document).on('click', '.item_add', function (e) {
         showNotification(e);
+        // addProductToCart(e);
     })
 })
 
@@ -9,19 +10,33 @@ $(document).ready(function() {
  */
 function addProductToCart(e) {
     let object = e.currentTarget;
-    let arrayHref = object.offsetParent.firstChild.children[0].pathname.split('/');
-    let singleView = arrayHref[2];
-    let arrayHrefImg = object.offsetParent.children[0].children[0].children[0].src.split('/');
-    let imgSrc = arrayHrefImg[5];
-    let product = {
-        id: object.id,
-        price: object.parentNode.children[1].children[1].textContent,
-        name: object.parentNode.parentNode.children[0].textContent,
-        singleView: singleView,
-        img: imgSrc 
-    };
-
-    $.post('/checkout', product);
+    let price = object.parentNode.children[1].children[1].textContent;
+    if (!e.currentTarget.offsetParent.classList.contains('product-left')) {
+        let singleView = object.parentNode.children[0].dataset.id;
+        let arrayHrefImg = object.parentNode.parentNode.parentNode.children[0].children[0].children[0].children[0].children[1].childNodes[1].children[0].src.split('/');
+        let imgSrc = arrayHrefImg[6];
+        let product = {
+            id: object.id,
+            price: price,
+            name: object.parentNode.parentNode.children[0].children[0].textContent,
+            singleView: singleView,
+            img: imgSrc
+        };
+        $.post('/checkout', product);
+    } else {
+        let arrayHref = object.offsetParent.firstChild.children[0].pathname.split('/');
+        let singleView = arrayHref[2];
+        let arrayHrefImg = object.offsetParent.children[0].children[0].children[0].src.split('/');
+        let imgSrc = arrayHrefImg[5];
+        let product = {
+            id: object.id,
+            price: price,
+            name: object.parentNode.parentNode.children[0].textContent,
+            singleView: singleView,
+            img: imgSrc 
+        };
+        $.post('/checkout', product);   
+    }
 }
 
 

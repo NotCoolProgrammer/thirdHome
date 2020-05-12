@@ -5,8 +5,8 @@ $(document).ready(function () {
     $.post('/session', {}, function (data) {
         let userSession = JSON.parse(data);
         let userSessionID = userSession.id;
-        $.post('/cart', {userSessionID}, function (data) {
-            let allProducts = JSON.parse(data);
+        $.post('/cart', {userSessionID}, function (products) {
+            let allProducts = JSON.parse(products);
             generateProductsInCart(allProducts);
         })
         deleteProducts(userSessionID);

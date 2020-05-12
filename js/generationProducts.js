@@ -14,7 +14,8 @@ $(document).ready(function() {
             //разметка в верстке такая, что на разных страницах разные классы, поэтому тут условие
             if ($('#product-top').hasClass('col-md-9') || $('#product-top').hasClass('all__products')) {
                 let div = $('<div></div>', {
-                    class: 'col-md-4 product-left'
+                    class: 'col-md-4 product-left',
+                    id: 'product'
                 });
                 $(`
                 <div class="product-main simpleCart_shelfItem">
@@ -28,7 +29,8 @@ $(document).ready(function() {
                 div.prependTo(productBlock);
             } else {
                 let div = $('<div></div>', {
-                    class: 'col-md-3 product-left'
+                    class: 'col-md-3 product-left',
+                    id: 'product'
                 });
                  $(`
                 <div class="product-main simpleCart_shelfItem">

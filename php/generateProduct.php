@@ -30,8 +30,11 @@
     </div>	
     <div class="col-md-7 single-top-right">
         <div class="single-para simpleCart_shelfItem">
-            <h2><?php echo $product['name']; ?></h2>
-            <h5 class="item_price"><?php echo $product['price']; ?></h5>
+            <h2 data-id ="<?php echo $product['singleview']; ?>"><?php echo $product['name']; ?></h2>
+            <div class="product__price">
+                <span class="currency">$</span>
+                <span class="price"><?php echo $product['price']; ?></span>
+            </div>
             <p><?php echo $product['fulldesc'];  ?> </p>
             <div class="available">
                 <ul>
@@ -54,7 +57,8 @@
                     <div class="clearfix"> </div>
                 </ul>
             </div>
-            <a href="#" class="add-cart item_add">ADD TO CART</a>
+            <span class="item_add" id="<?php echo $product['id'] ?>">Add To Cart</span>
+            <!-- <a href="#" class="add-cart item_add">ADD TO CART</a> -->
         </div>
     </div>
     <div class="clearfix"> </div>
